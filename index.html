@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- The Title of your link preview -->
-    <meta property="og:title" content="Newer WinWorldPC">
-    
-    <!-- The Description that appears under the title -->
+    <!-- Discord Banner Meta Tags -->
+    <meta property="og:title" content="Newer WinworldPC">
     <meta property="og:description" content="winworldpc but newer with more windows versions!!!">
     
-    <!-- The Image URL (Use a direct link to a PNG or JPG) -->
+    <!-- Updated Image Link -->
     <meta property="og:image" content="https://cdn.bsky.app/img/avatar/plain/did:plc:jg2rbvvyvejjt5mvwpvimbub/bafkreid4kt5iiuav6go4lfsh2swg2nftqonwpjdwuzmwe4gzrxfigdedhe">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#43b581">
+
+    <style>
+        body { 
+            font-family: sans-serif; 
+            padding: 20px; 
+            margin: 0;
+        }
+
+        /* Top Right Search Bar styling */
+        .search-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover { background-color: #0056b3; }
+    </style>
 </head>
 <body>
 
-<h1>newer winworldpc</h1>
-<p><a href="https://jellytose04.github.io">Library</a></p>
-    
+    <!-- Search Bar -->
+    <div class="search-wrapper">
+        <input type="text" id="siteSearch" placeholder="Search systems...">
+        <button onclick="handleSearch()">Search</button>
+    </div>
+
+    <h1>newer winworldpc</h1>
+    <p><a href="https://jellytose04.github.io">Library</a></p>
+
     <script>
         function handleSearch() {
-            // Get input and make it lowercase to prevent typos
             const query = document.getElementById('siteSearch').value.toLowerCase().trim();
 
+            // Redirect for Windows XP
             if (query === "windows xp") {
-                window.location.href = "https://archive.org/details/WinXPProSP3x86";
+                window.location.href = "https://archive.org";
             } else if (query !== "") {
                 alert("No results found for: " + query);
             }
         }
 
-        // Allow pressing "Enter" key to search
+        // Search on Enter key
         document.getElementById('siteSearch').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 handleSearch();
