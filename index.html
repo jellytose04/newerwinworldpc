@@ -14,28 +14,26 @@
 
 <h1>newer winworldpc</h1>
 <p><a href="https://jellytose04.github.io">Library</a></p>
+    
     <script>
-    function executeSearch() {
-        // Get the value from the search box and make it lowercase
-        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        function handleSearch() {
+            // Get input and make it lowercase to prevent typos
+            const query = document.getElementById('siteSearch').value.toLowerCase().trim();
 
-        // Redirect logic for specific keywords
-        if (query === "windows xp") {
-            window.location.href = "https://archive.org/details/WinXPProSP3x86";
-        } else if (query === "") {
-            alert("Please enter a search term.");
-        } else {
-            alert("No results found for: " + query);
+            if (query === "windows xp") {
+                window.location.href = "https://archive.org/details/WinXPProSP3x86";
+            } else if (query !== "") {
+                alert("No results found for: " + query);
+            }
         }
-    }
 
-    // Allow pressing "Enter" to search
-    document.getElementById('searchInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            executeSearch();
-        }
-    });
-</script>
+        // Allow pressing "Enter" key to search
+        document.getElementById('siteSearch').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    </script>
 
 </body>
 </html>
